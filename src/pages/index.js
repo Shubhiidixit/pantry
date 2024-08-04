@@ -27,7 +27,7 @@ export default function Home() {
 
     const handleRemoveItem = (index) => {
         if (selectedPantry) {
-            const newItems = panes[selectedPantry].filter((_, i) => i !== index);
+            const newItems = pantries[selectedPantry].filter((_, i) => i !== index);
             const newPantries = { ...pantries, [selectedPantry]: newItems };
             setPantries(newPantries);
             saveFolders(newPantries);
@@ -36,7 +36,7 @@ export default function Home() {
 
     const handleUpdateItem = (index, newText) => {
         if (selectedPantry) {
-            const newItems = panes[selectedPantry].map((item, i) => (i === index ? newText : item));
+            const newItems = pantries[selectedPantry].map((item, i) => (i === index ? newText : item));
             const newPantries = { ...pantries, [selectedPantry]: newItems };
             setPantries(newPantries);
             saveFolders(newPantries);
@@ -63,7 +63,7 @@ export default function Home() {
 
     const handleUpdatePantry = (oldName, newName) => {
         if (newName !== '' && oldName !== newName) {
-            const newPantries = { ...pantries, [newName]: panes[oldName] };
+            const newPantries = { ...pantries, [newName]: pantries[oldName] };
             delete newPantries[oldName];
             setPantries(newPantries);
             saveFolders(newPantries);
@@ -73,7 +73,7 @@ export default function Home() {
         }
     };
 
-    const filteredItems = selectedPantry ? panes[selectedPantry].filter(item => item.toLowerCase().includes(searchTerm.toLowerCase())) : [];
+    const filteredItems = selectedPantry ? pantries[selectedPantry].filter(item => item.toLowerCase().includes(searchTerm.toLowerCase())) : [];
 
     return (
         <Container maxWidth="sm" style={{ marginTop: '2em' }}>
@@ -90,7 +90,7 @@ export default function Home() {
             {selectedPantry && (
                 <>
                     <Typography variant="h5" component="h2" gutterBottom>
-                        {selectedPantry}'s Pantry
+                        {selectedPantry}&apos;s Pantry
                     </Typography>
                     <TextField
                         label="Add Item"
