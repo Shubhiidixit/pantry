@@ -1,13 +1,13 @@
-export const loadItems = () => {
+export const loadFolders = () => {
     if (typeof window !== 'undefined') {
-        const savedItems = localStorage.getItem('pantryItems');
-        return savedItems ? JSON.parse(savedItems) : [];
+        const savedFolders = localStorage.getItem('pantryFolders');
+        return savedFolders ? JSON.parse(savedFolders) : { 'Shubhi': ['Apples', 'Bananas'] };
     }
-    return [];
+    return { 'Shubhi': ['Apples', 'Bananas'] };
 };
 
-export const saveItems = (items) => {
+export const saveFolders = (folders) => {
     if (typeof window !== 'undefined') {
-        localStorage.setItem('pantryItems', JSON.stringify(items));
+        localStorage.setItem('pantryFolders', JSON.stringify(folders));
     }
 };
