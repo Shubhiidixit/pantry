@@ -90,7 +90,7 @@ export default function Home() {
             {selectedPantry && (
                 <>
                     <Typography variant="h5" component="h2" gutterBottom>
-                        {selectedPantry}&apos;s Pantry
+                        {selectedPantry}&#39;s Pantry
                     </Typography>
                     <TextField
                         label="Add Item"
