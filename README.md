@@ -18,6 +18,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Features
+- **Item Management:** Add, edit, and delete pantry items.
+- **Inventory Tracking:** Monitor the quantity of items in your pantry.
+- **Search & Filter:** Quickly find items with powerful search and filter options.
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
